@@ -26,14 +26,19 @@ conn.execute(
 )
 
 
-
 conn.execute(
     """
-    INSERT INTO productos (nombre_producto, precio, stock)
-    VALUES ('Piña', '15.5', '15')
+    CREATE TABLE IF NOT EXISTS pedidos(
+        id INTEGER PRIMARY KEY,
+        fecha_pedido DATE NOT NULL,
+        cantidad INTEGER NOT NULL,
+        cliente_id  INTEGER NOT NULL,
+        producto_id INTEGER NOT NULL,
+        FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+        FOREIGN KEY (producto_id) REFERENCES productos(id)
+    )
     """
 )
-conn.commit()
 
 
 
