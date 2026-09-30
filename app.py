@@ -27,6 +27,16 @@ conn.execute(
 
 
 
+conn.execute(
+    """
+    INSERT INTO productos (nombre_producto, precio, stock)
+    VALUES ('Piña', '15.5', '15')
+    """
+)
+conn.commit()
+
+
+
 
 
 
