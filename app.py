@@ -16,16 +16,18 @@ conn.execute(
 
 conn.execute(
     """
-    INSERT INTO clientes (nombre, apellidos, telefono)
-    VALUES ('Juan', 'Perez Gomes', '12345678')
+    CREATE TABLE IF NOT EXISTS productos(
+        id INTEGER PRIMARY KEY,
+        nombre_producto TEXT NOT NULL,
+        precio REAL NOT NULL,
+        stock INTEGER DEFAULT 0
+    )
     """
 )
-conn.commit()
 
 
 
-print("\nCLIENTES")
-cursor = conn.execute("SELECT * FROM clientes")
-for fila in cursor:
-    print(fila)
+
+
+
     
