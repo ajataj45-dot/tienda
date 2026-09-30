@@ -42,6 +42,17 @@ conn.execute(
 
 
 
+conn.execute(
+    """
+    INSERT INTO pedidos (fecha_pedido, cantidad, cliente_id, producto_id)
+    VALUES ('2026-10-01', 10, 1, 2)
+    """
+)
+conn.commit()
+
+
+
+
 
 
 
